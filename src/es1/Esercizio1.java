@@ -22,7 +22,7 @@ public class Esercizio1 {
                 System.out.println(Arrays.toString(array));
                 if (numeroDaSostituire == 0) {
                     break;
-                }
+                } else if (numeroDaSostituire > 5) break;
 
             }
         } catch (ArrayIndexOutOfBoundsException ex) {
