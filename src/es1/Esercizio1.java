@@ -30,6 +30,8 @@ public class Esercizio1 {
             System.err.println("Indice minore di 0");
         } catch (NumberFormatException ex) {
             System.err.println("Devi inserire un numero");
+        } finally {
+            scanner.close();
         }
 
 
