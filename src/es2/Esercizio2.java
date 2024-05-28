@@ -17,6 +17,8 @@ public class Esercizio2 {
             System.err.println("Devi inserire un valore numerico");
         } catch (ArithmeticException ex) {
             System.err.println("Nessun numero è divisibile per 0");
+        } finally {
+            scanner.close();
         }
 
     }

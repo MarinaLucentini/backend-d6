@@ -13,9 +13,11 @@ public class ContoOnline extends ContoCorrente {
         System.out.println("Titolare: " + getTitolare() + "- Saldo: " + saldo + "-Num movimenti: " + getnMovimenti() + "- Massimo movimenti: " + maxMovimenti + "-Massimo prelievo: " + maxPrelievo);
     }
 
-    public void preleva(double x) {
+    public void preleva(double x) throws BancaException {
         if (x <= maxPrelievo) {
             super.preleva(x);
         }
+        if (x > maxPrelievo)
+            throw new BancaException("Il prelievo non è disponibile");
     }
 }

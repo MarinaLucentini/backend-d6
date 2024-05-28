@@ -7,9 +7,8 @@ public class Banca {
         try {
             conto1.preleva(1750.5);
             System.out.println("Saldo conto: " + conto1.restiusciSaldo());
-
         } catch (BancaException e) {
-            
+
             System.out.println("Errore durante il prelievo" + e);
             e.printStackTrace();
         }

@@ -14,25 +14,27 @@ public class Esercizio1 {
             System.out.println(array[i]);
         }
         Scanner scanner = new Scanner(System.in);
-        try {
-            while (true) {
+
+        while (true) {
+            try {
                 System.out.println("Dammi un numero da 1 a 5 per sostituire il valore corrispondente nell'array. Se non vuoi cambiare nulla premi 0");
                 int numeroDaSostituire = Integer.parseInt(scanner.nextLine());
                 array[numeroDaSostituire - 1] = numeroDaSostituire;
                 System.out.println(Arrays.toString(array));
+
                 if (numeroDaSostituire == 0) {
                     break;
-                } else if (numeroDaSostituire > 5) break;
+                }
+            } catch (ArrayIndexOutOfBoundsException ex) {
 
+                System.err.println("Indice non valido");
+            } catch (NumberFormatException ex) {
+                System.err.println("Devi inserire un numero");
             }
-        } catch (ArrayIndexOutOfBoundsException ex) {
 
-            System.err.println("Indice minore di 0");
-        } catch (NumberFormatException ex) {
-            System.err.println("Devi inserire un numero");
-        } finally {
-            scanner.close();
+
         }
+        scanner.close();
 
 
     }
